@@ -1,0 +1,36 @@
+{
+    "name": "m4solutions/m4solutions-candidate-forms",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "authors": [
+        {
+            "name": "Ralf Zimemrmann TRITUM GmbH",
+            "email": "ralf.zimmermann@tritum.de"
+        },
+        {
+            "name": "Angel Milanov Key Development OOD",
+            "email": "a.milanov@keydev.eu"
+        },
+        {
+            "name": "Kamen Borisov Key Development OOD",
+            "email": "k.borisov@keydev.eu"
+        }
+    ],
+    "license": "GPL-2.0+",
+    "require": {
+        "typo3/cms-core": "^8.7 || ^9.5",
+        "typo3/cms-extbase": "^8.7 || ^9.5",
+        "typo3/cms-frontend": "^8.7 || ^9.5",
+        "typo3/cms-forms": "^8.7 || ^9.5",
+        "mpdf/mpdf": "^8.0",
+		"vgrem/php-spo": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "M4Solutions\\CandidateForms\\": "Classes/"
+        }
+    },
+    "replace": {
+        "m4solutions/candidate-forms": "self.version"
+    }
+}

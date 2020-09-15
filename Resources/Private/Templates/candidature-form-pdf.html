@@ -1,0 +1,468 @@
+{namespace m=M4Solutions\CandidateForms\ViewHelpers}
+
+<htmlpageheader name="header1" style="display: none;">
+    <table style="width: 100%; margin-bottom: -20mm;">
+        <tr>
+            <td>
+                <h1 style="margin-bottom: 0;">BEWERBUNGSBOGEN</h1>
+                <h2 style="margin-top: -10mm">Formularz zgłoszeniowy <span class="separator">|</span> application form
+                </h2>
+            </td>
+            <td style="text-align: right;">
+                <img style="height: 44mm; width: 46mm;" src="{logoSrc}" alt=""/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</htmlpageheader>
+<htmlpageheader name="header2" style="display: none; margin-bottom: 10mm">
+    <table style="width: 100%; margin-bottom: 5pt;">
+        <tr>
+            <td rowspan="2" style="height: 26mm; text-align: right;">
+                <img style="height: 26mm; width: 27mm;" src="{logoSrc}" alt=""/>
+            </td>
+        </tr>
+    </table>
+</htmlpageheader>
+<div class="content">
+    <div>
+        <h3><p class="circle">1</p>PERSÖNLICHE DATEN <span class="separator">|</span> Dane osobowe <span
+            class="separator">|</span> personal data
+        </h3>
+        <div class="field">
+            <h4>BEWERBUNG ZUM <span class="separator">|</span> Aplikuję jako <span class="separator">|</span>
+                application for</h4>
+            <p>{application-for}</p>
+        </div>
+        <div class="field" style="width:32.5%; float: left; ">
+            <h4>VORNAME <span class="separator">|</span> Imię <span class="separator">|</span> given name</h4>
+            <p>{given-name}</p>
+        </div>
+        <div class="field" style="width: 32.5%;float: left; margin-left: 3mm">
+            <h4>NAME <span class="separator">|</span> Nazwisko <span class="separator">|</span> surname</h4>
+            <p>{surname}</p>
+        </div>
+        <div class="field" style="width: 32.5%;float: left; margin-left: 3mm">
+            <h4>GEBURTSNAME <span class="separator">|</span> Nazwisko rodowe <span class="separator">|</span> surname
+            </h4>
+            <p>{born-surname}</p>
+        </div>
+        <div class="field" style="width:32.5%; display:inline-block; float: left; ">
+            <h4>GEBURTSDATUM <span class="separator">|</span> Data urodzenia <span class="separator">|</span> date of
+                birth</h4>
+            <p>{date-of-birth}</p>
+        </div>
+        <div class="field" style="width: 32.5%; display:inline-block; float: left; margin-left: 3mm">
+            <h4>GEBURTSORT <span class="separator">|</span> Miejsce urodzenia <span class="separator">|</span> place of
+                birth</h4>
+            <p>{place-of-birth}</p>
+        </div>
+        <div class="field" style="width: 32.5%; display:inline-block; float: left; margin-left: 3mm">
+            <h4 style="font-size: 6pt">STAATSANGEHÖRIGKEIT <span class="separator">|</span> Obywatelstwo <span
+                class="separator">|</span> nationality</h4>
+            <p>{nationality}</p>
+        </div>
+        <div class="field" style="width:32.5%; float: left; ">
+            <h4>KONFESSION <span class="separator">|</span> Wyznanie <span class="separator">|</span> confession</h4>
+            <p>{confession}</p>
+        </div>
+        <div class="field" style="width: 32.5%; float: left; margin-left: 3mm">
+            <h4>FAMILIENSTAND <span class="separator">|</span> Stan cywilny <span class="separator">|</span> family
+                status</h4>
+            <p>{family-status}</p>
+        </div>
+        <div class="field" style="width:32.5%; float: left; margin-left: 3mm">
+            <h4>KINDER <span class="separator">|</span> Dzieci <span class="separator">|</span> children</h4>
+            <p>{children}</p>
+        </div>
+        <div class="field">
+            <h4>ADRESSE <span class="separator">|</span> Ulica i numer domu <span class="separator">|</span> adress</h4>
+            <p>{address}</p>
+        </div>
+        <div class="field" style="width:32.5%; float: left; ">
+            <h4>PLZ <span class="separator">|</span> Kod pocztowy <span class="separator">|</span> postal code</h4>
+            <p>{postal-code}</p>
+        </div>
+        <div class="field" style="width:67%; float: left; margin-left: 3mm">
+            <h4>WOHNORT <span class="separator">|</span> Miejscowość <span class="separator">|</span> Residence</h4>
+            <p>{residence}</p>
+        </div>
+        <div class="field" style="width:50%; float: left;">
+            <h4>TELEFON <span class="separator">|</span> Telefon kontaktowy <span class="separator">|</span> phone
+                number</h4>
+            <p>{telephone}</p>
+        </div>
+        <div class="field" style="width:50%; float: left; margin-left: 3mm">
+            <h4>MOBIL <span class="separator">|</span> Telefon komórkowy <span class="separator">|</span> mobile number
+            </h4>
+            <p>{mobile}</p>
+        </div>
+        <div class="field">
+            <h4>E-MAIL <span class="separator">|</span> E-Mail <span class="separator">|</span> email adress</h4>
+            <p>{email}</p>
+        </div>
+        <h4 style="width: 32.5%; float: left">FÜHRERSCHEIN <span class="separator">|</span> Prawo jazdy <span
+            class="separator">|</span> driving licence</h4>
+        <h4 style="width: 32.5%; float: left; margin-left: 3mm">KLASSE <span class="separator">|</span> Kategoria prawa
+            jazdy <span class="separator">|</span> category</h4>
+        <h4 style="width: 32.5%; float: left; margin-left: 3mm">PKW <span class="separator">|</span> Czy posiadam auto?
+            <span class="separator">|</span> automobile</h4>
+        <div class="checkbox" style="width: 32.5%; float: left">
+            <table>
+                <tr>
+                    <f:for each="{0: 'JA | tak | yes', 1: 'NEIN | nie | no'}"
+                           as="needle">
+                        <td style="width: 25%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{driving-licence}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                </tr>
+            </table>
+        </div>
+        <div class="field" style="width: 32.5%; float: left; margin-left: 3mm">
+            <p>{driving-licence-category}</p>
+        </div>
+        <div class="checkbox" style="width: 32.5%; float: left; margin-left: 3mm">
+            <table>
+                <tr>
+                    <f:for each="{0: 'JA | tak | yes', 1: 'NEIN | nie | no'}"
+                           as="needle">
+                        <td style="width: 25%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{automobile}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div>
+        <h3><p class="circle">2</p>AUSBILDUNG <span class="separator">|</span> STUDIUM <span class="separator">|</span>
+            FORTBILDUNG <span class="separator">|</span> ZERTIFIKATE <span class="separator">|</span> KURSE
+        </h3>
+        <h3 style="width: 70%">Wykształcenie <span class="separator">|</span> Studia <span class="separator">|</span>
+            Studia podyplomowe <span class="separator">|</span> Dyplomy <span class="separator">|</span> Kursy
+            education <span class="separator">|</span> course of studies <span class="separator">|</span> certifcates
+            <span class="separator">|</span> trainee</h3>
+        <div>
+            <h4 style="width: 67%; float: left">SCHULBILDUNG <span class="separator">|</span> Edukacja <span
+                class="separator">|</span> application for</h4>
+            <h4 style="width: 32.5%; float: left; margin-left: 3mm">ABGESCHLOSSEN <span class="separator">|</span>
+                Ukończone <span class="separator">|</span> completed</h4>
+            <f:for each="{education}" as="e">
+                <div class="field" style="width: 67%; float: left">
+                    <p>{e.primary-education-institution}</p>
+                </div>
+                <div class="checkbox" style="width: 32.5%; float: left; margin-left: 3mm">
+                    <table>
+                        <tr>
+                            <f:for each="{0: 'JA | tak | yes', 1: 'NEIN | nie | no'}" as="needle">
+                                <td style="width: 25%;">
+                                    <m:checkbox
+                                        value="{m:inArray(haystack: '{e.primary-education-complete}', needle: '{needle}')}"
+                                        text="{needle}"/>
+                                </td>
+                            </f:for>
+                        </tr>
+                    </table>
+                </div>
+            </f:for>
+        </div>
+        <div>
+            <h4 style="width: 67%; float: left">STUDIUM <span class="separator">|</span> Studia <span class="separator">|</span>
+                study</h4>
+            <h4 style="width: 32.5%; float: left; margin-left: 3mm">ABGESCHLOSSEN <span class="separator">|</span>
+                Ukończone <span class="separator">|</span> completed</h4>
+            <f:for each="{university-education}" as="e">
+                <div class="field" style="width: 67%; float: left">
+                    <p>{e.study}</p>
+                </div>
+                <div class="checkbox" style="width: 32.5%; float: left; margin-left: 3mm">
+                    <table>
+                        <tr>
+                            <f:for each="{0: 'JA | tak | yes', 1: 'NEIN | nie | no'}" as="needle">
+                                <td style="width: 25%;">
+                                    <m:checkbox
+                                        value="{m:inArray(haystack: '{e.study-complete}', needle: '{needle}')}"
+                                        text="{needle}"/>
+                                </td>
+                            </f:for>
+                        </tr>
+                    </table>
+                </div>
+            </f:for>
+        </div>
+        <div>
+            <h4 style="width: 67%; float: left">FORTBILDUNG <span class="separator">|</span> Dalsza edukacja <span
+                class="separator">|</span> training</h4>
+            <h4 style="width: 32.5%; float: left; margin-left: 3mm">ABGESCHLOSSEN <span class="separator">|</span>
+                Ukończone <span class="separator">|</span> completed</h4>
+            <f:for each="{training}" as="e">
+                <div class="field" style="width: 67%; float: left">
+                    <p>{e.training-name}</p>
+                </div>
+                <div class="checkbox" style="width: 32.5%; float: left; margin-left: 3mm">
+                    <table>
+                        <tr>
+                            <f:for each="{0: 'JA | tak | yes', 1: 'NEIN | nie | no'}" as="needle">
+                                <td style="width: 25%;">
+                                    <m:checkbox
+                                        value="{m:inArray(haystack: '{e.training-complete}', needle: '{needle}')}"
+                                        text="{needle}"/>
+                                </td>
+                            </f:for>
+                        </tr>
+                    </table>
+                </div>
+            </f:for>
+        </div>
+        <div>
+            <h4 style="width: 67%; float: left">ZERTIFIKATE <span class="separator">|</span> Certyfkaty <span
+                class="separator">|</span> certifcates</h4>
+            <h4 style="width: 32.5%; float: left; margin-left: 3mm">ABGESCHLOSSEN <span class="separator">|</span>
+                Ukończone <span class="separator">|</span> completed</h4>
+            <f:for each="{certificates}" as="e">
+                <div class="field" style="width: 67%; float: left">
+                    <p>{e.certificate-name}</p>
+                </div>
+                <div class="checkbox" style="width: 32.5%; float: left; margin-left: 3mm">
+                    <table>
+                        <tr>
+                            <f:for each="{0: 'JA | tak | yes', 1: 'NEIN | nie | no'}" as="needle">
+                                <td style="width: 25%;">
+                                    <m:checkbox
+                                        value="{m:inArray(haystack: '{e.certificate-complete}', needle: '{needle}')}"
+                                        text="{needle}"/>
+                                </td>
+                            </f:for>
+                        </tr>
+                    </table>
+                </div>
+            </f:for>
+        </div>
+        <div>
+            <h4 style="width: 67%; float: left">KURSE <span class="separator">|</span> Kursy <span
+                class="separator">|</span> courses</h4>
+            <h4 style="width: 32.5%; float: left; margin-left: 3mm">ABGESCHLOSSEN <span class="separator">|</span>
+                Ukończone <span class="separator">|</span> completed</h4>
+            <f:for each="{courses}" as="e">
+                <div class="field" style="width: 67%; float: left">
+                    <p>{e.course-name}</p>
+                </div>
+                <div class="checkbox" style="width: 32.5%; float: left; margin-left: 3mm">
+                    <table>
+                        <tr>
+                            <f:for each="{0: 'JA | tak |  yes', 1: 'NEIN | nie | no'}" as="needle">
+                                <td style="width: 25%;">
+                                    <m:checkbox
+                                        value="{m:inArray(haystack: '{e.course-complete}', needle: '{needle}')}"
+                                        text="{needle}"/>
+                                </td>
+                            </f:for>
+                        </tr>
+                    </table>
+                </div>
+            </f:for>
+        </div>
+    </div>
+    <div>
+        <h3><p class="circle">3</p>SPRACHKENNTNISSE <span class="separator">|</span> Znajomość językowa <span
+            class="separator">|</span> language skills
+        </h3>
+        <div class="field">
+            <h4>MUTTERSPRACHE <span class="separator">|</span> Język ojczysty <span class="separator">|</span> frst
+                language</h4>
+            <p>{first-language}</p>
+        </div>
+        <div>
+            <h4 style="width: 67%; float: left">WEITERE SPRACHEN <span class="separator">|</span> Dalsze języki obce
+                <span class="separator">|</span> other languages</h4>
+            <h4 style="width: 32.5%; float: left; margin-left: 3mm">KENNTNISSE <span class="separator">|</span> Stopień
+                znajomości <span class="separator">|</span> knowledge</h4>
+            <f:for each="{other-languages}" as="e">
+                <div class="field" style="width: 67%; float: left">
+                    <p>{e.language}</p>
+                </div>
+                <div class="checkbox" style="width: 32.5%; float: left; margin-left: 3mm">
+                    <table>
+                        <tr>
+                            <f:for each="{0: '1', 1: '2', 2: '3', 3: '4'}" as="needle">
+                                <td style="width: 25%;">
+                                    <m:checkbox
+                                        value="{m:inArray(haystack: '{e.language-knowledge}', needle: '{needle}')}"
+                                        text="{needle}"/>
+                                </td>
+                            </f:for>
+                        </tr>
+                    </table>
+                </div>
+            </f:for>
+            <h4 style="width: 67%; float: left"></h4>
+            <h4 style="width: 32.5%; float: left; margin-left: 3mm; margin-top: -1mm; font-size: 5pt">(1 gering <span
+                class="separator">|</span> 4 hoch
+                <span class="separator">|</span> 1 słaba <span class="separator">|</span> 4 dobra <span
+                    class="separator">|</span> 1 minimal <span class="separator">|</span> 4 high)</h4>
+        </div>
+    </div>
+    <div>
+        <h3><p class="circle">4</p>BERUFSAUSBILDUNG <span class="separator">|</span> UMSCHULUNG <span class="separator">|</span>
+            Wykształcenie zawodowe <span class="separator">|</span> vocational training <span class="separator">|</span>
+            retraining
+        </h3>
+        <h4 style="width: 32.5%; float: left">ZEITRAUM <span class="separator">|</span> Okres <span
+            class="separator">|</span> period</h4>
+        <h4 style="width: 32.5%; float: left; margin-left: 3mm">AUSBILDUNGSORT <span class="separator">|</span> Szkoła
+            zawodowa <span class="separator">|</span> school</h4>
+        <h4 style="width: 32.5%; float: left; margin-left: 3mm">ABSCHLUSS <span class="separator">|</span> Zawód <span
+            class="separator">|</span> degree</h4>
+        <f:for each="{vocational-training}" as="needle">
+            <div class="field" style="width: 32.5%; float: left">
+                <p>{needle.training-period}</p>
+            </div>
+            <div class="field" style="width: 32.5%; float: left; margin-left: 3mm">
+                <p>{needle.training-school}</p>
+            </div>
+            <div class="field" style="width: 32.5%; float: left; margin-left: 3mm">
+                <p>{needle.training-degree}</p>
+            </div>
+        </f:for>
+    </div>
+    <div>
+        <h3><p class="circle">5</p>BERUFSTÄTIGKEIT <span class="separator">|</span> Doświadczenie zawodowe <span
+            class="separator">|</span> professional activity
+        </h3>
+        <h4 style="width: 32.5%; float: left">ZEITRAUM <span class="separator">|</span> Okres <span
+            class="separator">|</span> period</h4>
+        <h4 style="width: 32.5%; float: left; margin-left: 3mm">AUSBILDUNGSORT <span class="separator">|</span> Szkoła
+            zawodowa <span class="separator">|</span> school</h4>
+        <h4 style="width: 32.5%; float: left; margin-left: 3mm">ABSCHLUSS <span class="separator">|</span> Zawód <span
+            class="separator">|</span> degree</h4>
+        <f:for each="{professional-activity}" as="needle">
+            <div class="field" style="width: 32.5%; float: left">
+                <p>{needle.activity-period}</p>
+            </div>
+            <div class="field" style="width: 32.5%; float: left; margin-left: 3mm">
+                <p>{needle.activity-company}</p>
+            </div>
+            <div class="field" style="width: 32.5%; float: left; margin-left: 3mm">
+                <p>{needle.job-description}</p>
+            </div>
+        </f:for>
+    </div>
+    <div>
+        <h3><p class="circle">6</p>ALLGEMEINE ANGABEN <span class="separator">|</span> Informacje ogólne <span
+            class="separator">|</span> general data
+        </h3>
+        <h4 style="width: 67%; float: left;">EINTRITTSTERMIN <span class="separator">|</span> Możliwa data rozpoczęcia
+            <span class="separator">|</span> entry date</h4>
+        <h4 style="width: 32.5%; float: left; margin-left: 3mm;">ABGESCHLOSSEN <span class="separator">|</span>
+            Ukończone <span class="separator">|</span> completed</h4>
+        <div class="field" style="width: 67%; float: left">
+            <p>{entry-date}</p>
+        </div>
+        <div class="checkbox" style="width: 32.5%; float: left; margin-left: 3mm;">
+            <table>
+                <tr>
+                    <f:for each="{0: 'JA | tak | yes', 1: 'NEIN | nie | no'}" as="needle">
+                        <td style="width: 25%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{temporary-appointment}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                </tr>
+            </table>
+        </div>
+
+        <div class="field">
+            <h4>WIE WURDEN SIE AUF UNS AUFMERKSAM? <span class="separator">|</span> Jak się Państwo o nas
+                dowiedzieliście? <span class="separator">|</span> How did you fnd out about
+                us?</h4>
+            <p style="line-height: 6mm">{hear-about-us}</p>
+        </div>
+    </div>
+    <div>
+        <h3><p class="circle">7</p>WEITERE INFORMATIONEN? <span class="separator">|</span> Dalsze informacje <span
+            class="separator">|</span> Further information?
+        </h3>
+        <div class="field">
+            <p style="line-height: 6mm">{hear-about-us}</p>
+        </div>
+    </div>
+    <div style="margin-top: 2mm;">
+        <div
+            style="border-radius: 1mm; text-align: center; width: 4%; float: left; padding: 2mm 1mm; background-color:  #C7EAFB; height: 5mm">
+            <m:bluecheckbox value="{confirmation} == 1"/>
+        </div>
+        <div style="width: 90%; float: left;margin-top: 0; margin-right: 3mm; text-align: justify">
+            <p style="margin-left: 3mm; margin-top: 0; font-size: 7pt"> ICH BESTÄTIGE, DASS MEINE ANGABEN DER WAHRHEIT
+                ENTSPRECHEN UND VOLLSTÄNDIG
+                SIND. UNRICHTIGE UND/ ODER
+                UNVOLLSTÄNDIGE ANGABEN BERECHTIGEN DIE M4SOLUTIONS ZUR ANFECHTUNG ODER FRISTLOSEN BEENDIGUNG DES
+                EVENTUELL GESCHLOSSENEN VERTRAGES. DES WEITEREN VERPFLICHTEN DIESE ANGABEN ZUM SCHADENSERSATZ. MIT DEM
+                ABSENDEN MEINER BEWERBUNG
+                ERKLÄRE ICH MICH DAMIT EINVERSTANDEN, DASS MEINE DATEN IN EINEM EDV-SYSTEM GESPEICHERT UND ZUR
+                BEARBEITUNG MEINER
+                BEWERBUNG GENUTZT WERDEN.</p>
+            <p style="margin-left: 3mm; font-size: 7pt">
+                W związku z wejściem w życie z dniem 25 maja 2018 roku przepisów Rozporządzenia Parlamentu Europejskiego
+                i Rady (UE) 2016/679 z
+                dnia 27 kwietnia 2016 r. w sprawie ochrony osób fzycznych w związku z przetwarzaniem danych osobowych i
+                w sprawie swobodnego
+                przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych),
+                oświadczam, że moje dane
+                osobowe zawarte w powyższym formularzu zgłoszeniowym są zgodne z prawdą oraz wyrażam zgodę na
+                przetwarzanie moich danych
+                osobowych w celu bieżącej oraz przyszłych rekrutacji i zgodę na udostępnianie w/w danych osobowych
+                przyszłym pracodawcom oraz
+                frmom kooperującym.
+            </p>
+            <p style="margin-left: 3mm; font-size: 7pt">I confrm that my information is true and complete. Entering
+                false and incomplete
+                data authorizes M4
+                Solutions without prior notice to
+                challenge or completely terminate an already concluded contract and reserves the right to compensation.
+                By submitting my application,
+                I agree that my data will be stored in a computer system and will be used to process my application.</p>
+        </div>
+    </div>
+    <div>
+        <table style="page-break-inside: avoid;" autosize="1">
+            <tr>
+                <td style="width: 60mm;">
+                    <h4>ORT <span style="font-weight: bold">|</span> DATUM <span class="separator">|</span> Miejscowość
+                        <span style="font-weight: bold">|</span> data <span class="separator">|</span>
+                        place <span style="font-weight: bold">|</span> date</h4>
+                </td>
+                <td></td>
+                <td style="width: 70mm;">
+                    <h4>SUNTERSCHRIFT <span class="separator">|</span> Podpis <span class="separator">|</span> signature
+                    </h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <svg width="60mm" height="12mm" viewBox="0 0 60 12">
+                        <path d="m1,1 h58 a1,1 0 0 1 1,1 v8 a1,1 0 0 1 -1,1 h-58 a1,1 0 0 1 -1,-1 v-8 a1,1 0 0 1 1,-1"
+                              fill="#C7EAFB"/>
+                    </svg>
+                </td>
+                <td></td>
+                <td>
+                    <svg width="70mm" height="12mm" viewBox="0 0 70 12">
+                        <path d="m1,1 h68 a1,1 0 0 1 1,1 v8 a1,1 0 0 1 -1,1 h-68 a1,1 0 0 1 -1,-1 v-8 a1,1 0 0 1 1,-1"
+                              fill="#C7EAFB"/>
+                    </svg>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+

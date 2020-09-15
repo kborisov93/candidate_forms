@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:m4solutions_candidate_forms/Resources/Private/Language/locallang_db" date="2020-09-06T13:41:05Z" product-name="m4solutions_candidate_forms">
+		<header/>
+		<body>
+			<trans-unit id="tx_m4solutionscandidateforms_domain_model_sharepointcredentials" resname="tx_m4solutionscandidateforms_domain_model_sharepointcredentials">
+				<source>Share Point Credentials</source>
+			</trans-unit>
+			<trans-unit id="tx_m4solutionscandidateforms_domain_model_sharepointcredentials.username" resname="tx_m4solutionscandidateforms_domain_model_sharepointcredentials.username">
+				<source>Username</source>
+			</trans-unit>
+			<trans-unit id="tx_m4solutionscandidateforms_domain_model_sharepointcredentials.password" resname="tx_m4solutionscandidateforms_domain_model_sharepointcredentials.password">
+				<source>Password</source>
+			</trans-unit>
+			<trans-unit id="tx_m4solutionscandidateforms_domain_model_sharepointcredentials.url" resname="tx_m4solutionscandidateforms_domain_model_sharepointcredentials.url">
+				<source>Url</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

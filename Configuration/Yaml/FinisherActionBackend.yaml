@@ -1,0 +1,124 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              formEditor:
+                editors:
+                  900:
+                    # Extend finisher drop down
+                    selectOptions:
+                      35:
+                        value: 'CompanyFormFinisher'
+                        label: 'Company Form Finisher'
+                      36:
+                        value: 'CandidatureFormFinisher'
+                        label: 'Candidature Form Finisher'
+                propertyCollections:
+                  finishers:
+                    # add finisher fields
+                    25:
+                      identifier: 'CompanyFormFinisher'
+                      editors:
+                        __inheritances:
+                          10: 'TYPO3.CMS.Form.mixins.formElementMixins.BaseCollectionEditorsMixin'
+                        100:
+                          label: "Company Form Finisher"
+                        # custom field (input, required)
+                        110:
+                          identifier: 'clientId'
+                          templateName: 'Inspector-TextEditor'
+                          label: 'Client Id'
+                          propertyPath: 'options.clientId'
+                          propertyValidators:
+                            10: 'NotEmpty'
+                        111:
+                          identifier: 'clientId'
+                          templateName: 'Inspector-TextEditor'
+                          label: 'Client Secret'
+                          propertyPath: 'options.clientSecret'
+                          propertyValidators:
+                            10: 'NotEmpty'
+                        112:
+                          identifier: 'siteUrl'
+                          templateName: 'Inspector-TextEditor'
+                          label: 'Site URL'
+                          propertyPath: 'options.siteUrl'
+                          propertyValidators:
+                            10: 'NotEmpty'
+                        113:
+                          identifier: 'listName'
+                          templateName: 'Inspector-TextEditor'
+                          label: 'List name'
+                          propertyPath: 'options.listName'
+                          propertyValidators:
+                            10: 'NotEmpty'
+                    26:
+                      identifier: 'CandidatureFormFinisher'
+                      editors:
+                        __inheritances:
+                          10: 'TYPO3.CMS.Form.mixins.formElementMixins.BaseCollectionEditorsMixin'
+                        100:
+                          label: "Candidature Form Finisher"
+                        # custom field (input, required)
+                        110:
+                          identifier: 'clientId'
+                          templateName: 'Inspector-TextEditor'
+                          label: 'Client Id'
+                          propertyPath: 'options.clientId'
+                          propertyValidators:
+                            10: 'NotEmpty'
+                        111:
+                          identifier: 'clientId'
+                          templateName: 'Inspector-TextEditor'
+                          label: 'Client Secret'
+                          propertyPath: 'options.clientSecret'
+                          propertyValidators:
+                            10: 'NotEmpty'
+                        112:
+                          identifier: 'siteUrl'
+                          templateName: 'Inspector-TextEditor'
+                          label: 'Site URL'
+                          propertyPath: 'options.siteUrl'
+                          propertyValidators:
+                            10: 'NotEmpty'
+                        113:
+                          identifier: 'listName'
+                          templateName: 'Inspector-TextEditor'
+                          label: 'List name'
+                          propertyPath: 'options.listName'
+                          propertyValidators:
+                            10: 'NotEmpty'
+              finishersDefinition:
+                CompanyFormFinisher:
+                  formEditor:
+                    iconIdentifier: 'form-finisher'
+                    label: 'Company Form Finisher'
+                    predefinedDefaults:
+                      options:
+                        customField: ''
+                  # displayed when overriding finisher settings
+                  FormEngine:
+                    label: 'Company Form Finisher'
+                    elements:
+                      customField:
+                        label: 'Custom Field'
+                        config:
+                          type: 'text'
+                CandidatureFormFinisher:
+                  formEditor:
+                    iconIdentifier: 'form-finisher'
+                    label: 'Candidature Form Finisher'
+                    predefinedDefaults:
+                      options:
+                        customField: ''
+                  # displayed when overriding finisher settings
+                  FormEngine:
+                    label: 'Candidature Form Finisher'
+                    elements:
+                      customField:
+                        label: 'Custom Field'
+                        config:
+                          type: 'text'

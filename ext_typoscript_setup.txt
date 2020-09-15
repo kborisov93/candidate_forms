@@ -1,0 +1,18 @@
+plugin.tx_form.settings.yamlConfigurations {
+    1511293901 = EXT:m4solutions_candidate_forms/Configuration/Yaml/FinisherActionFrontend.yaml
+    1511293633 = EXT:m4solutions_candidate_forms/Configuration/Yaml/FormSetup.yaml
+}
+
+module.tx_form.settings.yamlConfigurations {
+    15112936902 = EXT:m4solutions_candidate_forms/Configuration/Yaml/FinisherActionBackend.yaml
+}
+
+page {
+    includeJSFooter {
+        1511293639 = EXT:m4solutions_candidate_forms/Resources/Public/JavaScript/Form/Frontend/RepeatableContainer.js
+    }
+
+    includeCSS {
+        m4solutionsCandidateForms = EXT:m4solutions_candidate_forms/Resources/Public/StyleSheets/app.css
+    }
+}

@@ -1,0 +1,708 @@
+{namespace m=M4Solutions\CandidateForms\ViewHelpers}
+
+<htmlpageheader name="header1" style="display: none;">
+    <table style="width: 100%; margin-bottom: -20mm;">
+        <tr>
+            <td>
+                <h1>FRAGEBOGEN</h1>
+                <h2>PERSONALDIENSTLEISTUNG</h2>
+            </td>
+            <td style="text-align: right;">
+                <img style="height: 44mm; width: 46mm;" src="{logoSrc}" alt=""/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</htmlpageheader>
+<htmlpageheader name="header2" style="display: none;">
+    <table style="width: 100%; margin-bottom: 5pt;">
+        <tr>
+            <td rowspan="2" style="height: 26mm; text-align: right;">
+                <img style="height: 26mm; width: 27mm;" src="{logoSrc}" alt=""/>
+            </td>
+        </tr>
+    </table>
+</htmlpageheader>
+
+<div class="content">
+    <div>
+        <h3><p class="circle">1</p>ALLGEMEINE ANGABEN</h3>
+        <div class="field">
+            <h4>FIRMENNAME</h4>
+            <p>{company-name}</p>
+        </div>
+        <div class="field" style="width:40%; float: left; ">
+            <h4>KUNDEN-NR.</h4>
+            <p>{client-no}</p>
+        </div>
+        <div class="field" style="width: 60%;float: left; margin-left: 3mm">
+            <h4>PROJEKT</h4>
+            <p>{project}</p>
+        </div>
+        <div class="field">
+            <h4>ANSPRECHSPARTNER</h4>
+            <p>{contact-person}</p>
+        </div>
+        <div class="field" style="width:60%; display:inline-block; float: left; ">
+            <h4>ABTEILUNG</h4>
+            <p>{devision}</p>
+        </div>
+        <div class="field" style="width: 40%; display:inline-block; float: left; margin-left: 3mm">
+            <h4>FUNKTION</h4>
+            <p>{function}</p>
+        </div>
+        <div class="field">
+            <h4>STRASSE | HAUSNUMMER</h4>
+            <p>{address-1}</p>
+        </div>
+        <div class="field" style="width:40%; float: left; ">
+            <h4>PLZ</h4>
+            <p>{zip-code}</p>
+        </div>
+        <div class="field" style="width: 60%; float: left; margin-left: 3mm">
+            <h4>ORT</h4>
+            <p>{city}</p>
+        </div>
+        <div class="field" style="width:60%; float: left; ">
+            <h4>TELEFON</h4>
+            <p>{phone}</p>
+        </div>
+        <div class="field" style="width: 40%; float: left; margin-left: 3mm">
+            <h4>MOBIL</h4>
+            <p>{mobile-phone}</p>
+        </div>
+        <div class="field">
+            <h4>E-MAIL</h4>
+            <p>{email}</p>
+        </div>
+    </div>
+    <div>
+        <h3><p class="circle">2</p>ANALYSE</h3>
+        <h4>GRUND DER STELLENBESETZUNG</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <f:for each="{0: 'NEUE STELLE', 1: 'NACHFOLGE', 2: 'ZUSÄTZLICHER BEDARF', 3: 'VERTRETUNG'}"
+                           as="reason">
+                        <td style="width: 25%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{employment-reason}', needle: '{reason}')}"
+                                text="{reason}"/>
+                        </td>
+                    </f:for>
+                </tr>
+            </table>
+        </div>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <td class="others">
+                        <m:checkbox
+                            value="{employment-reason-others-checkbox} == 1"
+                            text="SONSTIGES"/>
+                    </td>
+                    <td class="others-text">
+                        {employment-reason-others-text}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h4>WIE LANGE IST DIE STELLE SCHON UNBESETZT?</h4>
+            <div class="checkbox">
+                <table>
+                    <tr>
+                        <f:for each="{0: 'NEU', 1: '1 -3 MONATE', 2: '3 - 6 MONATE', 3: 'MEHR ALS 6 MONATE'}"
+                               as="needle">
+                            <td style="width: 25%;">
+                                <m:checkbox
+                                    value="{m:inArray(haystack: '{vacancy-duration}', needle: '{needle}')}"
+                                    text="{needle}"/>
+                            </td>
+                        </f:for>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div>
+            <h4>HABEN SIE BEREITS MASSNAHMEN ERGRIFFEN?</h4>
+            <div class="checkbox">
+                <table>
+                    <tr>
+                        <f:for each="{0: 'JA', 1: 'NEIN', 2: 'MASSNAHME BEENDET'}"
+                               as="needle">
+                            <td style="width: 25%;">
+                                <m:checkbox
+                                    value="{m:inArray(haystack: '{actions-taken}', needle: '{needle}')}"
+                                    text="{needle}"/>
+                            </td>
+                        </f:for>
+                        <td style="width: 25%"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div>
+            <h4>WELCHE MASSNAHMEN SIND/WAREN ES?</h4>
+            <div class="checkbox">
+                <table>
+                    <tr>
+                        <f:for each="{0: 'INTERN', 1: 'EXTERN', 2: 'BEENDET', 3: 'ANZEIGEN PRESSE'}"
+                               as="needle">
+                            <td style="width: 25%;">
+                                <m:checkbox
+                                    value="{m:inArray(haystack: '{concrete-actions-taken-1}', needle: '{needle}')}"
+                                    text="{needle}"/>
+                            </td>
+                        </f:for>
+                    </tr>
+                </table>
+            </div>
+            <div class="checkbox">
+                <table>
+                    <tr>
+                        <f:for each="{0: 'INTERNET', 1: 'SOCIAL MEDIA', 2: 'JOBCENTER', 3: 'PERSONALDIENSTLEISTER'}"
+                               as="needle">
+                            <td style="width: 25%;">
+                                <m:checkbox
+                                    value="{m:inArray(haystack: '{concrete-actions-taken-2}', needle: '{needle}')}"
+                                    text="{needle}"/>
+                            </td>
+                        </f:for>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3><p class="circle">3</p>RECRUTING PROZESS</h3>
+        <h4>HABEN SIE BEWERBUNGEN ERHALTEN?</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <f:for each="{0: 'KEINE', 1: 'WENIGER ALS 5', 2: 'MEHR ALS 5', 3: 'ÜBER 10'}"
+                           as="needle">
+                        <td style="width: 25%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{applications-recieved}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                </tr>
+            </table>
+        </div>
+        <h4>WIE ZUFRIEDEN WAREN SIE MIT DER ANZAHL UND DER QUALITÄT DER BEWERBUNGEN/ BEWERBER?</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <f:for each="{0: 'SEHR GUT', 1: 'GUT', 2: 'MITTEL', 3: 'ÜBERHAUPT NICHT'}"
+                           as="needle">
+                        <td style="width: 25%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{applications-satisfaction}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                </tr>
+            </table>
+        </div>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <td class="others">
+                        <m:checkbox
+                            value="{application-satisfaction-reason-checkbox} == 1"
+                            text="GRÜNDE"/>
+                    </td>
+                    <td class="others-text">
+                        {application-satisfaction-reason-text}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div>
+        <h3><p class="circle">4</p>INFORMATIONEN ZUR STELLENAUSSCHREIBUNG</h3>
+        <h4>ART DER EINSTELLUNG</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <f:for each="{0: 'DIREKTVERMITTLUNG', 1: 'ARBEITERNEHMERÜBERLASSUNG', 2: 'TRY & HIRE'}"
+                           as="needle">
+                        <td>
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{recruitment-type}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                </tr>
+            </table>
+        </div>
+        <div class="checkbox">
+            <table autosize="1">
+                <tr>
+                    <f:for each="{0: 'TRY & EDUCATE'}"
+                           as="needle">
+                        <td style="width: 15%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{recruitment-type}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                    <td class="others" style="width: 15%;">
+                        <m:checkbox
+                            value="{recruitment-type-other-checkbox} == 1"
+                            text="SONSTIGE"/>
+                    </td>
+                    <td class="others-text" style="width: 60%;">
+                        {recruitment-type-other-text}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h4>EINTRITTSTERMIN</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <f:for each="{0: 'SOFORT'}" as="needle">
+                        <td style="width: 15%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{starting-date}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                    <td class="others" style="width: 15%;">
+                        <m:checkbox value="{starting-date-text} != ''" text="ZUM"/>
+                    </td>
+                    <td class="others-text" style="width: 70%;">
+                        {starting-date-text}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h4>GEWÜNSCHTES VERTRAGSVERHÄLTNIS</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <f:for each="{0: 'BEFRISTET', 1: 'UNBEFRISTET', 2: 'SONSTIGES'}" as="needle">
+                        <td style="width: 25%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{contractual-relationship}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                </tr>
+            </table>
+        </div>
+
+        <f:if condition="{contractual-relationship-text} != ''">
+            <div class="field">
+                <p>{contractual-relationship-text}</p>
+            </div>
+        </f:if>
+        <h4>GENAUE STELLENBEZEICHNUNG / BERUFSBEZEICHNUNG</h4>
+        <div class="repeatable">
+            <f:for each="{job-designation}" as="designation">
+                <f:for each="{designation}" as="d">
+                    <p>{d}</p>
+                </f:for>
+            </f:for>
+        </div>
+        <div class="field">
+            <h4>GEWÜNSCHTE ANZAHL NEUER MITARBEITER</h4>
+            <p>{required-employee-count}</p>
+        </div>
+        <div class="field">
+            <h4>STANDORT / REGION</h4>
+            <p>{location}</p>
+        </div>
+        <h4>AUFGABENGEBIET</h4>
+        <div class="repeatable">
+            <f:for each="{area-of-employment}" as="area">
+                <f:for each="{area}" as="d">
+                    <p>{d}</p>
+                </f:for>
+            </f:for>
+        </div>
+        <h4>QUALIFIKATION</h4>
+        <div class="repeatable">
+            <f:for each="{qualifications}" as="qualification">
+                <f:for each="{qualification}" as="d">
+                    <p>{d}</p>
+                </f:for>
+            </f:for>
+        </div>
+        <h4>SOFT-SKILLS / PERSÖNLICHKEITSMERKMALE</h4>
+        <div class="repeatable">
+            <f:for each="{soft-skills}" as="skill">
+                <f:for each="{skill}" as="d">
+                    <p>{d}</p>
+                </f:for>
+            </f:for>
+        </div>
+        <h4>ALTERNATIVE QUALIFIKATIONEN / STUDIENGÄNGE</h4>
+        <div class="repeatable">
+            <f:for each="{other-qualifications}" as="other-qualification">
+                <f:for each="{other-qualification}" as="d">
+                    <p>{d}</p>
+                </f:for>
+            </f:for>
+        </div>
+        <h4>GBERUFSERFAHRUNG</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <f:for each="{0: 'KEINE', 1: 'BIS 5 JAHRE', 2: '5 - 10 JAHRE', 3: 'ÜBER 10 JAHRE'}" as="needle">
+                        <td style="width: 25%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{experience}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                </tr>
+            </table>
+        </div>
+        <h4>FÜHRUNGSERFAHRUNG / FÜHRUNGSVERANTWORTUNG</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <f:for each="{0: 'JA', 1: 'NEIN', 2: 'FACHLICH', 3: 'DISZIPLINARISCH'}" as="needle">
+                        <td style="width: 25%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{leadership}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                </tr>
+            </table>
+        </div>
+        <h4>TEAMGRÖSSE</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <f:for
+                        each="{0: 'BIS 5 MITARBEITER', 1: '5 - 10 MITARBEITER', 2: '10 - 20 MITARBEITER', 3: 'MEHR ALS 20 MITARBEITER'}"
+                        as="needle">
+                        <td style="width: 25%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{team-size}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                </tr>
+            </table>
+        </div>
+        <h4>EDV KENNTNISSE</h4>
+        <div class="repeatable">
+            <f:for each="{computer-skills}" as="skill">
+                <f:for each="{skill}" as="d">
+                    <p>{d}</p>
+                </f:for>
+            </f:for>
+        </div>
+        <h4>SPRACHKENNTNISSE</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <td style="width: 17%; padding-left: 3mm; padding-right: 3mm;" class="others">
+                        MUTTERSPRACHE
+                    </td>
+                    <td class="others-text">{mother-tongue-text}</td>
+                </tr>
+            </table>
+        </div>
+        <f:for each="{foreign-languages}" as="lang">
+            <div class="checkbox">
+                <table>
+                    <tr>
+                        <td style="width: 17%; padding-left: 3mm;"
+                            class="others">
+                            FREMDSPRACHE
+                        </td>
+                        <td style="width: 33%;" class="others-text">
+                            {lang.language}
+                        </td>
+                        <f:for each="{0: 'KONVERSATIONSSICHER', 1: 'GRUNDKENNTNISSE'}" as="needle">
+                            <td style="width: 25%;">
+                                <m:checkbox value="{m:inArray(haystack: '{lang.proficiency}', needle: {needle})}"
+                                            text="{needle}"/>
+                            </td>
+                        </f:for>
+                    </tr>
+                </table>
+            </div>
+        </f:for>
+        <h4>MOBILITÄT</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <td class="others" style="width: 30%;">
+                        <m:checkbox
+                            value="{mobility.0} == 'FAHRERLAUBNIS'"
+                            text="FAHRERLAUBNIS"/>
+                    </td>
+                    <td class="others-text" style="padding-left: 3mm">
+                        KLASSEN: {driving-licence}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h4>ARBEITSZEIT</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <td style="width: 25%;" class="others">
+                        <m:checkbox value="{working-time-full-time.0} == 'VOLLZEIT'"
+                                    text="VOLLZEIT"/>
+                    </td>
+                    <td style="width: 25%;" class="others-text">
+                        {working-time-full-time-text} STD/WOCHE
+                    </td>
+                    <td style="width: 25%;" class="others">
+                        <m:checkbox value="{working-time-part-time.0} == 'TEILZEIT'"
+                                    text="TEILZEIT"/>
+                    </td>
+                    <td style="width: 25%;" class="others-text">
+                        {working-time-part-time-text} STD/WOCHE
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <td style="width: 25%;" class="others">
+                        <m:checkbox value="{working-time-minor.0} == 'GERINGFÜGIG'" text="GERINGFÜGIG"/>
+                    </td>
+                    <td style="width: 25%;" class="others-text">
+                        {working-time-minor-text} STD/WOCHE
+                    </td>
+                    <td style="width: 25%;" class="others">
+                        <m:checkbox value="{working-time-other.0} == 'SONSTIGES'" text="SONSTIGES"/>
+                    </td>
+                    <td style="width: 25%;" class="others-text">
+                        {working-time-other-text} STD/WOCHE
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h4>REGELUNG MEHRARBEIT</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <f:for each="{0: 'IM GEHALT ENTHALTEN', 1: 'ÜBERSTUNDENKONTO'}" as="needle">
+                        <td style="width: 25%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{extra-time-regulation}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                </tr>
+            </table>
+        </div>
+        <h4>VERGÜTUNG</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <td style="width: 25%;" class="others">
+                        <m:checkbox value="{salary-year} != ''" text=" BRUTTO-JAHRESGEHALT"/>
+                    </td>
+                    <td style="width: 25%;" class="others-text">
+                        {salary-year-text}
+                    </td>
+                    <td style="width: 25%;" class="others">
+                        <m:checkbox value="{salary-hourly-rate} != ''" text="BRUTTO- STUNDENGEHALT"/>
+                    </td>
+                    <td style="width: 25%;" class="others-text">
+                        {salary-hourly-rate-text}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h4>BENEFITS</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <f:for each="{0: 'BONIFIKATION', 1: 'PROVISION', 2: 'VWL', 3: 'WEIHNACHTS-/ URLAUBSGELD'}"
+                           as="needle">
+                        <td>
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{benefits-1}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                </tr>
+            </table>
+        </div>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <f:for each="{0: 'JOBTICKET'}" as="needle">
+                        <td style="width: 25%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{benefits-2}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                    <td style="width: 25%;" class="others">
+                        <m:checkbox value="{benefits-other-text} != ''" text="SONSTIGE"/>
+                    </td>
+                    <td style="width: 50%;" class="others-text">
+                        {benefits-other-text}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div>
+        <h3><p class="circle">5</p>IHR UNTERNEHMEN</h3>
+        <div class="field">
+            <h4>WAS ZEICHNET IHR UNTERNEHMEN AUS?</h4>
+            <p>
+                {distinguishing-characteristics}
+            </p>
+        </div>
+        <div class="field">
+            <h4>WELCHES LEITBILD, WERTE, PHILOSOPHIE VERMITTELT IHR UNTERNEHMEN?</h4>
+            <p>
+                {company-philosophie}
+            </p>
+        </div>
+        <div class="field">
+            <h4>WELCHE PERSPEKTIVEN UND AUFSTIEGSCHANCEN BIETET IHR UNTERNEHMEN?</h4>
+            <p>
+                {career-development}
+            </p>
+        </div>
+        <div class="field">
+            <h4>WELCHE WEITERBILDUNGS- UND FORTBILDUNGSMÖGLICHKEITEN BIETET IHR UNTERNEHMEN?</h4>
+            <p>
+                {education-opportunities}
+            </p>
+        </div>
+        <div class="field">
+            <h4>GIBT ES REFERENZEN, AUSZEICHNUNGEN FÜR IHR UNTERNEHMEN?</h4>
+            <p>
+                {references}
+            </p>
+        </div>
+    </div>
+    <div>
+        <h3><p class="circle">6</p>AUFTRAGSERTEILUNG</h3>
+        <h4>ANGEBOTSERSTELLUNG / AUFTRAGSERTEILUNG</h4>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <f:for
+                        each="{0: 'VERMITTLUNG BASIS', 1: 'VERMITTLUNG PLUS', 2: 'PREMIUMANZEIGEN', 3: 'ZERTIFAKTE/ NACHWEISE'}"
+                        as="needle">
+                        <td style="width: 25%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{proposal-preparation-1}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                </tr>
+            </table>
+        </div>
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <f:for each="{0: 'ONE- SITE MANAGEMENT'}" as="needle">
+                        <td style="width: 25%;">
+                            <m:checkbox
+                                value="{m:inArray(haystack: '{proposal-preparation-2}', needle: '{needle}')}"
+                                text="{needle}"/>
+                        </td>
+                    </f:for>
+                    <td style="width: 25%;" class="others">
+                        <m:checkbox value="{benefits-other-text} != ''" text="SONSTIGES"/>
+                    </td>
+                    <td style="width: 50%;">
+                        {proposal-preparation-other-text}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div style="margin-top: 20mm">
+        <div class="checkbox">
+            <table>
+                <tr>
+                    <td style="width: 50%; padding-left: 3mm">
+                        GEWÜNSCHTE OFFIZIELLE TÄTIGKEIT FÜR IHR UNTERNEHMEN
+                    </td>
+                    <td>
+                        {company-operation-field-text}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="checkbox" style="margin-top: 10mm">
+            <table>
+                <tr>
+                    <td style="width: 60%; padding-left: 3mm">
+                        AUFTRAGSERTEILUNG GEMÄSS DEN KONDITIONEN DER M4SOLUTIONS GMBH
+                    </td>
+                    <td>
+                        <m:checkbox value="{create-proposal} == 1" text=""/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <table style="page-break-inside: avoid;margin-top: 20mm" autosize="1">
+        <tr>
+            <td style="width: 60mm;">
+                <h4>ORT | DATUM</h4>
+            </td>
+            <td></td>
+            <td style="width: 70mm;">
+                <h4>STEMPEL | UNTERSCHRIFT AUFTRAGGEBER</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <svg width="60mm" height="12mm" viewBox="0 0 60 12">
+                    <path d="m1,1 h58 a1,1 0 0 1 1,1 v8 a1,1 0 0 1 -1,1 h-58 a1,1 0 0 1 -1,-1 v-8 a1,1 0 0 1 1,-1"
+                          fill="#E5F1D4"/>
+                </svg>
+            </td>
+            <td></td>
+            <td>
+                <svg width="70mm" height="12mm" viewBox="0 0 70 12">
+                    <path d="m1,1 h68 a1,1 0 0 1 1,1 v8 a1,1 0 0 1 -1,1 h-68 a1,1 0 0 1 -1,-1 v-8 a1,1 0 0 1 1,-1"
+                          fill="#E5F1D4"/>
+                </svg>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 60mm">
+                <h4>ORT | DATUM</h4>
+            </td>
+            <td></td>
+            <td style="width: 70mm">
+                <h4>STEMPEL | UNTERSCHRIFT AUFTRAGNEHMER</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <svg width="60mm" height="12mm" viewBox="0 0 60 12">
+                    <path d="m1,1 h58 a1,1 0 0 1 1,1 v8 a1,1 0 0 1 -1,1 h-58 a1,1 0 0 1 -1,-1 v-8 a1,1 0 0 1 1,-1"
+                          fill="#E5F1D4"/>
+                </svg>
+            </td>
+            <td></td>
+            <td>
+                <svg width="70mm" height="12mm" viewBox="0 0 70 12">
+                    <path d="m1,1 h68 a1,1 0 0 1 1,1 v8 a1,1 0 0 1 -1,1 h-68 a1,1 0 0 1 -1,-1 v-8 a1,1 0 0 1 1,-1"
+                          fill="#E5F1D4"/>
+                </svg>
+            </td>
+        </tr>
+    </table>
+</div>
