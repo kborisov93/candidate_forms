@@ -1,9 +1,6 @@
 <?php
 defined('TYPO3_MODE') or die();
 
-$composerAutoloadFile = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Resources/Private/Libraries/vendor/autoload.php';
-require_once($composerAutoloadFile);
-
 call_user_func(function () {
     if (TYPO3_MODE === 'BE') {
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup(trim('
