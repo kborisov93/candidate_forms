@@ -18,10 +18,10 @@
     ],
     "license": "GPL-2.0+",
     "require": {
-        "typo3/cms-core": "^8.7 || ^9.5",
-        "typo3/cms-extbase": "^8.7 || ^9.5",
-        "typo3/cms-frontend": "^8.7 || ^9.5",
-        "typo3/cms-forms": "^8.7 || ^9.5",
+        "typo3/cms-core": "^9.5",
+        "typo3/cms-extbase": "^9.5",
+        "typo3/cms-frontend": "^9.5",
+        "typo3/cms-form": "^9.5",
         "mpdf/mpdf": "^8.0",
 		"vgrem/php-spo": "^2.4"
     },
